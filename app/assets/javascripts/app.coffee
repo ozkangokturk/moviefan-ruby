@@ -1,0 +1,2 @@
+moviefan = angular.module('moviefan',[
+])
