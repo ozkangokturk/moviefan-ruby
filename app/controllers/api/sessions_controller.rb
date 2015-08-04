@@ -25,7 +25,7 @@ class Api::SessionsController < Devise::SessionsController
       roleNames << role.roleName
     end
     langKey = current_user.langKey
-    render :status => 200, :json => { :langKey => langKey, :roles => roleNames, :login => current_user.username, :user => current_user }
+    render :status => 200, :json => { :langKey => langKey, :roles => roleNames, :login => current_user.username, :user => current_user, :firstName => current_user.firstName, :lastName => current_user.lastName, :email => current_user.email }
   end
 
   def register
@@ -42,5 +42,14 @@ class Api::SessionsController < Devise::SessionsController
     else
       respond_with @user.errors, :location => api_users_path
     end
+  end
+
+  def saveSettings
+    current_user.update_attributes!(settings_params)
+    render :status => 200
+  end
+
+  def settings_params
+    params.permit(:email, :firstName, :lastName, :langKey)
   end
 end
