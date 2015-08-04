@@ -24,3 +24,7 @@ MovieGenre.create(movie_id: 2, genre_id: 1)
 MovieGenre.create(movie_id: 2, genre_id: 2)
 MovieGenre.create(movie_id: 3, genre_id: 2)
 MovieGenre.create(movie_id: 3, genre_id: 3)
+
+User.delete_all
+User.create(email: 'user@user.com', encrypted_password: '$2a$10$h0mYUbnXJLppnAuLmjEi2eFpcPNOgy9TwB6jMAT4Elf2Zzg0qnhue', username: "user")
+User.create(email: 'admin@admin.com', encrypted_password: '$2a$10$q7KlPraTz4VRBoyE9vlyQOXn7FRkxunZi0XE8wU3IAbS7MJQiAigW', username: "admin")
