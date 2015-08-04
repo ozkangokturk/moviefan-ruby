@@ -7,29 +7,32 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Genre.delete_all
-Genre.create(name: 'crime')
-Genre.create(name: 'drama')
-Genre.create(name: 'sports')
-Genre.create(name: 'comedy')
+@crime = Genre.create(name: 'crime')
+@drama = Genre.create(name: 'drama')
+@sports = Genre.create(name: 'sports')
+@comedy = Genre.create(name: 'comedy')
 
 Movie.delete_all
-Movie.create(title: 'The Shawshank Redemption', rating: '9.3', director: 'Frank Darabont')
-Movie.create(title: 'The Godfather', rating: '9.2', director: 'Francis Ford Coppola')
-Movie.create(title: 'Rocky Balboa', rating: '7.2', director: 'Sylvester Stallone')
+@shawshank = Movie.create(title: 'The Shawshank Redemption', rating: '9.3', director: 'Frank Darabont')
+@godfather = Movie.create(title: 'The Godfather', rating: '9.2', director: 'Francis Ford Coppola')
+@rocky = Movie.create(title: 'Rocky Balboa', rating: '7.2', director: 'Sylvester Stallone')
 
 MovieGenre.delete_all
-MovieGenre.create(movie_id: 1, genre_id: 1)
-MovieGenre.create(movie_id: 1, genre_id: 2)
-MovieGenre.create(movie_id: 2, genre_id: 1)
-MovieGenre.create(movie_id: 2, genre_id: 2)
-MovieGenre.create(movie_id: 3, genre_id: 2)
-MovieGenre.create(movie_id: 3, genre_id: 3)
+MovieGenre.create(movie_id: @shawshank.id, genre_id: @crime.id)
+MovieGenre.create(movie_id: @shawshank.id, genre_id: @drama.id)
+MovieGenre.create(movie_id: @godfather.id, genre_id: @crime.id)
+MovieGenre.create(movie_id: @godfather.id, genre_id: @drama.id)
+MovieGenre.create(movie_id: @rocky.id, genre_id: @drama.id)
+MovieGenre.create(movie_id: @rocky.id, genre_id: @sports.id)
 
 User.delete_all
-@adminUser = User.create(email: 'user@user.com', encrypted_password: '$2a$10$h0mYUbnXJLppnAuLmjEi2eFpcPNOgy9TwB6jMAT4Elf2Zzg0qnhue', username: "user")
-@user = User.create(email: 'admin@admin.com', encrypted_password: '$2a$10$q7KlPraTz4VRBoyE9vlyQOXn7FRkxunZi0XE8wU3IAbS7MJQiAigW', username: "admin")
+@adminUser = User.create! :email => 'admin@admin.com', :password => 'admin', :password_confirmation => 'admin', :langKey => 'en', :username => 'admin'
+@user = User.create! :email => 'user@user.com', :password => 'user', :password_confirmation => 'user', :langKey => 'en', :username => 'user'
 
 UsersRole.delete_all
 UsersRole.create(roleName: 'ROLE_ADMIN', user_id: @adminUser.id)
 UsersRole.create(roleName: 'ROLE_USER', user_id: @adminUser.id)
 UsersRole.create(roleName: 'ROLE_USER', user_id: @user.id)
+
+
+
