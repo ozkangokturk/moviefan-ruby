@@ -40,7 +40,8 @@ class Api::SessionsController < Devise::SessionsController
       sign_in(@user)
       render :status => 201, :json => { :user => @user }
     else
-      respond_with @user.errors, :location => api_users_path
+      render :status => 400, :json => { :user => @user.errors }
+      #respond_with @user.errors, :location => api_users_path
     end
   end
 
