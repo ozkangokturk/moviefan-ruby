@@ -29,8 +29,13 @@ class Api::SessionsController < Devise::SessionsController
   end
 
   def register
-    @user = User.create(username: params[:login], email: params[:email], password: params[:password], langKey: params[:langKey])
-    UsersRole.create(user_id: @user.id, roleName: "ROLE_USER")
+    @user = User.new(username: params[:login], email: params[:email], password: params[:password], password_confirmation: params[:password], langKey: params[:langKey])
+    @user.save
+    if @user.id != nil
+      @userRole = UsersRole.new(user_id: @user.id, roleName: "ROLE_USER")
+      @userRole.save
+    end
+
     if @user.valid?
       sign_in(@user)
       render :status => 201, :json => { :user => @user }
