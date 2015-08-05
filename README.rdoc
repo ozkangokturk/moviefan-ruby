@@ -41,5 +41,5 @@ http://moviefan-ruby.herokuapp.com
 - [Ziya Ozkan Gokturk](https://github.com/ozkangokturk)
 
 
-##Author
+==Author
 Ziya Ozkan Gokturk // (http://www.ozkangokturk.com)
