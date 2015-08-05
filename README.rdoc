@@ -1,28 +1,38 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#AngularJS (v.1.4.0) + Rails (v.4.2.1) port of MovieFan application
 
-Things you may want to cover:
+##Single Web page application:
 
-* Ruby version
+*   Responsive Web Design
+*   HTML5 Boilerplate
+*   Twitter Bootstrap
+*   AngularJS
+*   Compatible with IE9+ and modern browsers
+*   Full internationalization support with Angular Translate
+*   Optional Compass / Sass support for CSS design
+*   Optional WebSocket support with Spring Websocket
 
-* System dependencies
+##Tools and Libraries
+*   rails
+*   devise
+*   bower_rails
+*   responders
+*   uglifier
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Demo (Heroku)
+[http://moviefan-ruby.herokuapp.com/](http://moviefan-ruby.herokuapp.com/)
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+##Local installation
+1) Open Terminal
+
+	git clone https://github.com/ozkangokturk/moviefan-ruby.git
+	cd moviefan-ruby
+	bundle install --without production
+	rake db:migrate
+	rake db:seed
+	rails server
+
+2) Open [http://localhost:3000](http://localhost:3000/) using [Chrome](https://www.google.com/chrome)
