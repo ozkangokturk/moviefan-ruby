@@ -1,8 +1,8 @@
 == README
 
-#AngularJS (v.1.4.0) + Rails (v.4.2.1) port of MovieFan application
+=AngularJS (v.1.4.0) + Rails (v.4.2.1) port of MovieFan application
 
-##Single Web page application:
+==Single Web page application:
 
 *   Responsive Web Design
 *   HTML5 Boilerplate
@@ -13,19 +13,19 @@
 *   Optional Compass / Sass support for CSS design
 *   Optional WebSocket support with Spring Websocket
 
-##Tools and Libraries
+==Tools and Libraries
 *   rails
 *   devise
 *   bower_rails
 *   responders
 *   uglifier
 
-##Demo (Heroku)
+==Demo (Heroku)
 [http://moviefan-ruby.herokuapp.com/](http://moviefan-ruby.herokuapp.com/)
 
 
 
-##Local installation
+==Local installation
 1) Open Terminal
 
 	git clone https://github.com/ozkangokturk/moviefan-ruby.git
@@ -36,3 +36,10 @@
 	rails server
 
 2) Open [http://localhost:3000](http://localhost:3000/) using [Chrome](https://www.google.com/chrome)
+
+== Contributors
+- [Ziya Ozkan Gokturk](https://github.com/ozkangokturk)
+
+
+##Author
+Ziya Ozkan Gokturk // [www.ozkangokturk.com](http://www.ozkangokturk.com)
