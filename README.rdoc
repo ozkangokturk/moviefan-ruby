@@ -21,7 +21,7 @@
 *   uglifier
 
 ==Demo (Heroku)
-[http://moviefan-ruby.herokuapp.com/](http://moviefan-ruby.herokuapp.com/)
+http://moviefan-ruby.herokuapp.com
 
 
 
