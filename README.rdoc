@@ -35,11 +35,11 @@ http://moviefan-ruby.herokuapp.com
 	rake db:seed
 	rails server
 
-2) Open [http://localhost:3000](http://localhost:3000/) using [Chrome](https://www.google.com/chrome)
+2) Open http://localhost:3000/ using [Chrome](https://www.google.com/chrome)
 
 == Contributors
 - [Ziya Ozkan Gokturk](https://github.com/ozkangokturk)
 
 
 ##Author
-Ziya Ozkan Gokturk // [www.ozkangokturk.com](http://www.ozkangokturk.com)
+Ziya Ozkan Gokturk // (http://www.ozkangokturk.com)
