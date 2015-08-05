@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     resources :moviefan
     match '/moviefan/:movieId' => 'moviefan#create', :via => :post
     match '/moviefan/:movieId' => 'moviefan#destroy', :via => :delete
+    resources :settings
+    match '/account' => 'settings#saveSettings', :via => :post
+    match '/account/change_password' => 'settings#changePassword', :via => :post
+
   end
 
   root 'home#index'
